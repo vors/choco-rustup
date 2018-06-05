@@ -1,0 +1,5 @@
+packages
+*.nupkg
+paket.lock
+paket.dependencies
+*.exe
