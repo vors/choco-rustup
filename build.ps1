@@ -27,4 +27,4 @@ if (-not $matchResult) {
 }
 
 $version = $matches[1]
-choco pack --version "$version-beta1" rustup.nuspec
+choco pack --version $version rustup.nuspec
