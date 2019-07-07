@@ -3,3 +3,4 @@ packages
 paket.lock
 paket.dependencies
 *.exe
+LICENSE*

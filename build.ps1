@@ -1,22 +1,24 @@
-param([switch]$Force)
-
 if (-not (Get-Command choco)) {
     throw "choco not found, install from https://chocolatey.org/install"
 }
 
 # Download fresh rustup-init.exe
-# and make sure we can do it over existing file
 $url = 'http://win.rustup.rs/'
 $package = "$pwd\rustup-init.exe"
-if (Test-Path $package) {
-    if ($Force) {
-        Write-Warning "Removing old rustup-init.exe"
-        Remove-Item $package
-    } else {
-        Write-Warning "Skip rustup-init.exe downloading, because it's already present"
-    }   
-}
 (New-Object System.Net.WebClient).DownloadFile($url, $package)
+
+$licenseUrl = 'https://raw.githubusercontent.com/rust-lang/rustup.rs/master/LICENSE-MIT'
+$licensePath = "$pwd\LICENSE.tmp"
+(New-Object System.Net.WebClient).DownloadFile($licenseUrl, $licensePath)
+
+$licenseText = Get-Content -Raw $licensePath
+@"
+From: $licenseUrl
+
+LICENSE
+
+$licenseText
+"@ > "$pwd\LICENSE.txt"
 
 # version is output in form of
 # rustup-init 1.11.0 (e751ff9f8 2018-02-13)

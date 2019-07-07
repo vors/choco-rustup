@@ -1,0 +1,9 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+ 
+I'm a rust community member that tries to provide easy option to install rustup.
+See the conversation here: https://github.com/rust-lang/rustup.rs/issues/912
+
+The source code for building package is here https://github.com/vors/choco-rustup
+The main binary is downloaded from the website http://win.rustup.rs/ every time when package is built.

@@ -1,11 +1,12 @@
-<?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
     <metadata>
         <id>rustup</id>
         <!-- version will be replaced from the command line call -->
         <version>0.0.1</version>
         <authors>The Rust Project Developers</authors>
-        <licenseUrl>https://github.com/rust-lang-nursery/rustup.rs/blob/master/LICENSE-MIT</licenseUrl>
+        <licenseUrl>https://raw.githubusercontent.com/rust-lang/rustup.rs/master/LICENSE-MIT</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <projectUrl>https://rustup.rs/</projectUrl>
         <iconUrl>http://www.rust-lang.org/logos/rust-logo-128x128-blk.png</iconUrl>
         <description>rustup is an installer for the systems programming language Rust</description>
@@ -15,5 +16,7 @@
         <file src="chocolateyinstall.ps1" target="" />
         <file src="chocolateyuninstall.ps1" target="" />
         <file src="rustup-init.exe" target="" />
+        <file src="LICENSE.txt" target="" />
+        <file src="VERIFICATION.txt" target="" />
     </files>
 </package>
